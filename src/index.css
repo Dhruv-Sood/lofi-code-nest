@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+    font-family: 'haloweenfont';
+    src: url(./fonts/haloween.ttf);
+}
+
+.rubik{
+    font-family: 'Rubik Iso', cursive;
+}
+
+.btn-gif{
+    background-image: url('https://media.giphy.com/media/KZBTBnJt59SUsvag2d/giphy.gif');
+    background-position: 30%;
+}
+
+.haloween{
+    font-family: haloweenfont;
+}
