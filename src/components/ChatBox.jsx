@@ -40,7 +40,7 @@ function ChatBox({room}) {
                 <div className='absolute right-2 top top-1 bg-blue-200 bg-opacity-0  rounded-lg hover:scale-110 hover:cursor-pointer transition-all duration-300'>
                     <a href="https://webwhiteboard.com" target='_blank'><i class="fa-solid fa-chalkboard text-3xl"></i></a>
                 </div>
-                <div className="h-[92%] overflow-scroll p-4">
+                <div className="h-[92%] overflow-y-scroll  p-4">
                     {messages.map((message)=>{
                         return <div key={message.id} className='flex text-lg gap-[4px]'>
                             <p className=' font-bold text-[#9f9]'>{message.displayName}:</p>
@@ -71,3 +71,4 @@ function ChatBox({room}) {
     )
 }
 export default ChatBox
+
