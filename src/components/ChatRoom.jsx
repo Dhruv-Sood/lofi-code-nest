@@ -4,9 +4,13 @@ import "./ChatRoom.css";
 
 import { audioStation } from "../../public/audioStations";
 import { gifs } from "../../public/gifs";
+import {signOut} from 'firebase/auth'
+import {auth} from '../firebaseconfig'
+import Cookies from "universal-cookie";
 
+const cookies = new Cookies();
 
-function ChatRoom({ room }) {
+function ChatRoom({ room , setRoom , setIsAuth}) {
   const [play, setPlay] = useState(true);
   const musicRef = useRef(null);
 
@@ -45,6 +49,15 @@ function ChatRoom({ room }) {
     }
   }
 
+
+  const signOutHandler = async () => {
+    await signOut(auth)
+    cookies.remove('auth-token')
+    setRoom(null)
+    setIsAuth(false)
+  }
+
+
   return (
     <div className=" h-screen w-screen flex flex-col justify-center items-center gap-10 bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${gifs[randomGif]})`}}>
       <iframe
@@ -56,18 +69,21 @@ function ChatRoom({ room }) {
         ref={musicRef}
       ></iframe>
       <ChatBox room={room} />
-      {/* <button className="btn" onClick={handlePause}>Pause</button> */}
+      
+        <div onClick={signOutHandler} className="roboto m-[-30px] bg-black text-white py-1 px-4 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 hover:bg-red-500">Sign out</div>
+
+
       <div className="w-[400px] h-[70px] flex justify-between">
         <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad]  rounded-xl hover:cursor-pointer hover:text-5xl transition-all duration-300 backdrop-blur-md" onClick={handlePrev}>
-          <i class="fa-solid fa-chevron-left"></i>
+          <i className="fa-solid fa-chevron-left"></i>
         </div>
 
         <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad] rounded-xl bg-opacity-50 hover:cursor-pointer hover:text-5xl transition-all duration-500 backdrop-blur-md">
-          <i class="fa-solid fa-stop " onClick={handlePause}></i>
+          <i className="fa-solid fa-stop " onClick={handlePause}></i>
         </div>
 
         <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad]  rounded-xl bg-opacity-50 hover:cursor-pointer hover:text-5xl transition-all duration-300 backdrop-blur-md" onClick={handleNext}>
-          <i class="fa-solid fa-chevron-right"></i>
+          <i className="fa-solid fa-chevron-right"></i>
         </div>
 
       </div>

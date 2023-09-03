@@ -21,7 +21,7 @@ function App() {
       <div>
         {!room ? (
           <EnterRoom roomRef={roomRef} setRoom={setRoom}/>
-        ) : <ChatRoom room={room}/>}
+        ) : <ChatRoom room={room} setRoom={setRoom} setIsAuth={setIsAuth}/>}
       </div>
     )
   }
