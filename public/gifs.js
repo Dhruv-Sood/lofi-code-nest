@@ -1,5 +1,5 @@
 export const gifs = [
-  "https://media.giphy.com/media/PpJgPwskZFBuw/giphy.gif",
+  "https://media.giphy.com/media/LSKHkpRJySs5W81D7B/giphy.gif",
   "https://media.giphy.com/media/3rgXBwsbbD6zKG2nkY/giphy.gif",
   "https://media.giphy.com/media/XyeHw1D6PNN3TRXFci/giphy.gif",
   "https://media.giphy.com/media/HPF6ivflFs7U4/giphy.gif",

@@ -57,6 +57,10 @@ function ChatRoom({ room , setRoom , setIsAuth}) {
     setIsAuth(false)
   }
 
+  const exitRoomHandler = () => {
+    setRoom(null)
+  }
+
 
   return (
     <div className=" h-screen w-screen flex flex-col justify-center items-center gap-10 bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${gifs[randomGif]})`}}>
@@ -68,9 +72,13 @@ function ChatRoom({ room , setRoom , setIsAuth}) {
         }`}
         ref={musicRef}
       ></iframe>
+      <h1 className='rubik text-4xl mb-[-20px] mt-[-20px] font-bold'>LOFI CODE NEST</h1>
       <ChatBox room={room} />
       
-        <div onClick={signOutHandler} className="roboto m-[-30px] bg-black text-white py-1 px-4 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 hover:bg-red-500">Sign out</div>
+      <div className="flex m-[-30px] gap-4">
+        <div onClick={signOutHandler} className="roboto  bg-black text-white py-1 px-4 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 hover:bg-red-500">Sign out</div>
+        <div onClick={exitRoomHandler} className="roboto bg-black text-white py-1 px-4 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 hover:bg-red-500">Exit Room</div>
+        </div>
 
 
       <div className="w-[400px] h-[70px] flex justify-between">
