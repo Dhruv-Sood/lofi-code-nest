@@ -86,8 +86,8 @@ function ChatRoom({ room , setRoom , setIsAuth}) {
           <i className="fa-solid fa-chevron-left"></i>
         </div>
 
-        <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad] rounded-xl bg-opacity-50 hover:cursor-pointer hover:text-5xl transition-all duration-500 backdrop-blur-md">
-          <i className="fa-solid fa-stop " onClick={handlePause}></i>
+        <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad] rounded-xl bg-opacity-50 hover:cursor-pointer hover:text-5xl transition-all duration-500 backdrop-blur-md" onClick={handlePause}>
+          <i className="fa-solid fa-stop "></i>
         </div>
 
         <div className="w-[20%] grid place-content-center text-4xl bg-[#b5b5f2ad]  rounded-xl bg-opacity-50 hover:cursor-pointer hover:text-5xl transition-all duration-300 backdrop-blur-md" onClick={handleNext}>
